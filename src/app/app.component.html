@@ -69,34 +69,57 @@
     </div>
   </div>
 </nav> -->
-<div class="container-fluid">
-  <!-- <mat-drawer-container class="mt-2">
-    <mat-drawer #drawer mode="side" opened>Drawer content
-      <div class="example-sidenav-content">
+<div class="container-fluid mt-1">
+  <mat-drawer-container>
+    <mat-drawer style="width: 230px;" #drawer [mode]="isLargeScreen() ? 'side' : 'push'" [opened]="isLargeScreen()">
+      <div class="sidebar" id="side-bar">
+        <mat-card class="side_card mt-2">
+          <mat-card-content>
+            <div class="toggle-btn-container d-flex justify-content-between align-items-center">
+              <p class="w-100 mat-h3 font-weight-600 font-18 mb-0 text-white text-center heading_with_bg"
+                color="primary">My Request</p>
+              <button class="toggler-button text-white p-0 d-none d-md-block" mat-button (click)="toggle_sm(1);rotate()">
+                <mat-icon>chevron_left</mat-icon>
+              </button>
+            </div>
+            <!-- item list starts -->
+            <div class="card-body px-0 min-height-2 mt-2">
+              <mat-nav-list>
+                <mat-accordion class="side-bar side-bar-menu-hover">
+                  <mat-expansion-panel (click)="toggle_menu($event)" [@.disabled]="true" routerLinkActive
+                    #rla1="routerLinkActive" [expanded]="rla1.isActive" class="side-bar-font custom-panel">
 
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <mat-icon>dashboard</mat-icon>
+                        <span class="ms-3">Dashboard</span>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <mat-nav-list>
+                      <a mat-list-item (click)="hideSidenavAfterClick()" routerLinkActive="active-router-link"
+                        [routerLink]="['dashboard']"><strong>Dashboard</strong></a>
+                    </mat-nav-list>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-nav-list>
+            </div>
+            <!-- item list ends -->
+          </mat-card-content>
+        </mat-card>
       </div>
+      <!-- <mat-nav-list>
+        <a matListItemTitle mat-list-item routerLink="dashboard">Dashboard</a>
+      </mat-nav-list> -->
     </mat-drawer>
     <mat-drawer-content>
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-      Main content
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container> -->
-  <mat-sidenav-container>
-    <mat-drawer-container class="example-container">
-      <mat-drawer class="ms-5" #drawer class="example-sidenav bg-warning" mode="push" [opened]="isDrawerOpen" [style.width]="drawerWidth">
-        <p>Auto-resizing sidenav</p>
-      </mat-drawer>
-      <mat-drawer-content>
-        <button type="button" mat-button (click)="toggleDrawer()">
+      <div class="container-fluid">
+        <button style="margin-left: -25px; margin-top: -10px;" type="button" mat-button (click)="toggleDrawer()">
           <i class="bi bi-list"></i>
         </button>
-        Main content
+        <!-- Main content -->
         <router-outlet></router-outlet>
-      </mat-drawer-content>
-    </mat-drawer-container>
-  </mat-sidenav-container>
-
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

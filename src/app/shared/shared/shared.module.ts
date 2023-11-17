@@ -13,6 +13,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule
   ],
   exports: [
     CommonModule,
@@ -45,7 +50,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule
   ],
 })
 export class SharedModule { }
