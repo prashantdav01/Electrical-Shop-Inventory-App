@@ -38,14 +38,20 @@ export class AppComponent implements OnInit {
     this.getScreenWidth = window.innerWidth;
 
     if (this.getScreenWidth > 991) {
+      console.log('hi');
+
       this.showFiller = false;
       this.getSmSidebar == document.getElementsByClassName('sm-sidebar');
       // this.panelOpenState = true;
       return true;
     } else if (this.getScreenWidth < 992 && this.getScreenWidth > 768) {
+      console.log('hello');
+
       if (this.showFiller == true) {
         this.sidebarElement[0].classList.remove('sm-sidebar');
       } else {
+        console.log('hey');
+
         if (this.panelOpenState == false || this.showFiller == false) {
           this.sidebarElement[0].classList.add('sm-sidebar');
         }
@@ -67,7 +73,7 @@ export class AppComponent implements OnInit {
     if (Object.values(this.myElement.classList).includes('sm-sidebar')) {
       // this.rotate();
     }
-    // this.panelOpenState = true;
+    this.panelOpenState = true;
     this.sidebarElement[0].classList.remove('sm-sidebar');
     this.showFiller = true;
   }
