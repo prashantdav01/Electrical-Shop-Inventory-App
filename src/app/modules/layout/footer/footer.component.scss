@@ -1,0 +1,19 @@
+.footer-container{
+  width: 100%;
+  background-color: #003ea2;
+  display: flex;
+  align-items: center;
+}
+
+.copyrights-text{
+  text-align: center;
+  color: white;
+  margin: 0px;
+  font-size: 12px;
+}
+footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 900;
+}

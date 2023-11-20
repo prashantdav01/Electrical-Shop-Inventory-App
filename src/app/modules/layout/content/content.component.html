@@ -1,0 +1,46 @@
+<div class="container-fluid mt-2">
+  <mat-drawer-container class="ifms-sidebar-container border" autosize>
+    <mat-drawer  #drawer  [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()" >
+      <div class="sidebar" id="side-bar">
+        <mat-card class="side_card">
+          <mat-card-content>
+            <div class="toggle-btn-container d-flex justify-content-between align-items-center">
+              <p class="w-100 mat-h3 font-weight-600 font-18 mb-0 text-white text-center heading_with_bg"
+                color="primary">My Request</p>
+              <button class="toggler-button text-white d-none d-md-block" mat-button (click)="toggle_sm(1);rotate()">
+                <mat-icon>chevron_left</mat-icon>
+              </button>
+            </div>
+            <!-- item list starts -->
+            <div class="card-body px-0 min-height-2 mt-2">
+              <mat-nav-list>
+                <mat-accordion class="side-bar side-bar-menu-hover">
+                  <mat-expansion-panel (click)="toggle_menu($event)" [@.disabled]="true" routerLinkActive
+                    #rla1="routerLinkActive" [expanded]="rla1.isActive" class="side-bar-font custom-panel">
+
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <mat-icon>dashboard</mat-icon>
+                        <span class="ms-3">Dashboard</span>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <mat-list>
+                      <a mat-list-item (click)="hideSidenavAfterClick()" routerLinkActive="active-router-link"
+                        [routerLink]="['dashboard']"><strong>Dashboard</strong></a>
+                    </mat-list>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-nav-list>
+            </div>
+            <!-- item list ends -->
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- <mat-nav-list>
+        <a matListItemTitle mat-list-item routerLink="dashboard">Dashboard</a>
+      </mat-nav-list> -->
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</div>
