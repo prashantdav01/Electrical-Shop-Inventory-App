@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutComponent } from './layout.component';
 import { RouterModule, Routes } from '@angular/router';
-import { StockComponent } from '../stock/stock.component';
 import { ContentComponent } from './content/content.component';
 
 const routes: Routes = [
@@ -14,10 +13,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent
   },
-  {
-    path: 'stock',
-    component: StockComponent,
-  },
+ 
 ];
 
 @NgModule({

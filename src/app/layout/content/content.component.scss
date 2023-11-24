@@ -172,4 +172,20 @@ mat-drawer {
 
 .mat-mdc-card {
 background-color: #fff;
+height: 100vh
  }
+
+ ::ng-deep .mat-drawer {
+  // overflow: hidden !important;
+}
+
+::ng-deep.mat-drawer-inner-container {
+  // overflow: hidden !important;
+  // -webkit-overflow-scrolling: touch;
+}
+
+// .ifms-sidebar-sidenav {
+//   .mat-card:not([class*=mat-elevation-z]) {
+//     box-shadow: none;
+//   }
+// }
